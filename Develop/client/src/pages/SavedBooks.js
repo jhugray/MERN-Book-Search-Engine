@@ -56,9 +56,12 @@ const SavedBooks = () => {
     console.log('Book id:');
     console.log(bookId);
     try {
-      await deleteBook({
+      const removeBookResult = await deleteBook({
         variables: { bookId: bookId }
       });
+      console.log('---');
+      console.log(userData);
+      console.log(removeBookResult.data.removeBook);
 
       // if (!response.ok) {
       //   throw new Error('something went wrong!');
