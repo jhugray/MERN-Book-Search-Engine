@@ -53,9 +53,11 @@ const SavedBooks = () => {
       return false;
     }
 
+    console.log('Book id:');
+    console.log(bookId);
     try {
       await deleteBook({
-        variables: { bookId: { ...bookId }}
+        variables: { bookId: bookId }
       });
 
       // if (!response.ok) {
