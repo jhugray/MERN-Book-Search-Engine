@@ -73,10 +73,13 @@ const SearchBooks = () => {
     }
 
     try {
-      await saveBook({
+      const response = await saveBook({
         variables: { book: bookToSave }
       });
-
+      console.log(`this is a saveBook......${saveBook}`)
+      console.log(`this is a bookToSave......${bookToSave}`)
+      console.log(bookToSave)
+      console.log(response)
       // if (!response.ok) {
       //   throw new Error('something went wrong!');
       // }
@@ -154,3 +157,6 @@ const SearchBooks = () => {
 };
 
 export default SearchBooks;
+
+
+// 

@@ -9,11 +9,12 @@ import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
-  const { loading, data } = useQuery(GET_ME);
+  const { loading, error, data } = useQuery(GET_ME);
   const [deleteBook] = useMutation(REMOVE_BOOK);
   // use this to determine if `useEffect()` hook needs to run again
   const userData = data?.me || {};
   console.log("SAVED BOOOOOOKS");
+  console.log(error);
   console.log(data);
   // return JSON.stringify(data);
   // const userDataLength = Object.keys(userData).length;
